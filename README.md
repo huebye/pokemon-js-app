@@ -1,2 +1,3 @@
 # pokemon-js-app
-list of pokemon including description
+
+PURPOSE: The Purpose of this app is to display a list of pokemon including their details. 
