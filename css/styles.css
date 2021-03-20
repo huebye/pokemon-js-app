@@ -1,0 +1,54 @@
+
+
+body {
+  font-family: sans-serif;
+  font-size: 19px;
+  background-color: #99A0B9;
+  color: #414141;
+}
+
+nav > h1 {
+  display: block;
+  font-size: 30px;
+  background-color: inherit;
+  color: #42FFBB;
+  width: 450px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+nav > img:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+nav > img {
+  transition: 1s;
+}
+
+.PokemonList {
+  display: block;
+  background-color: #C2CAE8;
+  width: 450px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 3px;
+  transition: 1s;
+}
+
+.PokemonList:hover {
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  display: inline-block;
+  background-color: inherit;
+  text-align: center;
+}
