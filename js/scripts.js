@@ -10,8 +10,8 @@ let PokemonList = [{name: "Charizard", height: 1.7, type: ["fire", "flying"], at
 
 for (let i=0; i < PokemonList.length; i++){
   if (PokemonList[i].height <1.5) {
-    document.write(PokemonList[i].name + " (height: " + (PokemonList[i].height) + ") <br>");
+    document.write('<p>' + PokemonList[i].name + " (height: " + (PokemonList[i].height) + ")" + '</p>');
   } else if (PokemonList[i].height >1.4) {
-    document.write(PokemonList[i].name + " (height: " + (PokemonList[i].height) + ") - Wow, that's big!!!<br>");
+    document.write('<p>' + PokemonList[i].name + " (height: " + (PokemonList[i].height) + ") - Wow, that's big!!!" + '</p>');
   }
 }

@@ -1,15 +1,36 @@
 
 
 body {
-  font-family: sans-serif;
+  font-family: 'Ropa Sans';
   font-size: 19px;
   background-color: #99A0B9;
   color: #414141;
 }
 
+p {
+  border: solid 2px #72778C;
+  border-radius: 3px;
+  padding: 7px;
+  font-weight: 400;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  transition: 1.8s;
+  background-color: #B6C1EA;
+}
+
+p:hover {
+  transform: scale(1.02);
+  transition: 1s;
+  box-shadow: 0.8px 2px 6px  #42FFBB;
+}
+
 nav > h1 {
   display: block;
-  font-size: 30px;
+  font-family: 'Rowdies';
+  font-size: 33px;
   background-color: inherit;
   color: #42FFBB;
   width: 450px;
@@ -34,14 +55,16 @@ nav > img {
   background-color: #C2CAE8;
   width: 450px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 15px;
-  border-radius: 3px;
-  transition: 1s;
+  border-radius: 2px;
+  transition: 1.8s;
+  box-shadow: 1px 2px 5px 1px grey;
 }
 
 .PokemonList:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow: 2px 4px 10px 2px grey;
   transition: 1s;
 }
 
