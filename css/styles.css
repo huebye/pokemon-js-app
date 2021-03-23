@@ -24,7 +24,7 @@ p {
 p:hover {
   transform: scale(1.02);
   transition: 1s;
-  box-shadow: 0.8px 2px 6px  #42FFBB;
+  box-shadow: 1.5px 2px 6px  #42FFBB;
 }
 
 nav > h1 {
