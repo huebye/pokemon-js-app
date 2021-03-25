@@ -7,11 +7,14 @@ let PokemonList = [{name: "Charizard", height: 1.7, type: ["fire", "flying"], at
                   {name: "Nidoking", height: 1.4, type: ["ground", "poison"], attack: 102, defense: 77},
                   {name: "Ursaring", height: 1.8, type: ["normal", "field"], attack: 130, defense: 75},
                   {name: "Genesect", height: 1.5, type: ["steel", "bug"], attack: 120, defense: 95}];
+                  
 
-for (let i=0; i < PokemonList.length; i++){
-  if (PokemonList[i].height <1.5) {
-    document.write('<p>' + PokemonList[i].name + " (height: " + (PokemonList[i].height) + ")" + '</p>');
-  } else if (PokemonList[i].height >1.4) {
-    document.write('<p>' + PokemonList[i].name + " (height: " + (PokemonList[i].height) + ") - Wow, that's big!!!" + '</p>');
+function myLoopFunction(pokemon) {
+  if (pokemon.height <1.5) {
+    document.write('<p>' + pokemon.name + " (height: " + (pokemon.height) + ")" + '</p>');
+  } else if (pokemon.height >1.4) {
+    document.write('<p>' + pokemon.name + " (height: " + (pokemon.height) + ") - Wow, that's big!!!" + '</p>');
   }
 }
+
+PokemonList.forEach(myLoopFunction);
