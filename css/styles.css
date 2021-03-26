@@ -19,6 +19,7 @@ p {
   padding-left: 10px;
   transition: 1.8s;
   background-color: #B6C1EA;
+  box-shadow: 0.2px 0.5px 1.5px  grey;
 }
 
 p:hover {
