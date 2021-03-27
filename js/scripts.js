@@ -11,6 +11,7 @@ let pokemonRepository = (function() {
                     {name: "Genesect", height: 1.5, type: ["steel", "bug"], attack: 120, defense: 95}
                     ];
 
+
     function add(item) {
       if (typeof item === 'object' && item === Object.keys(pokemonList)){
       pokemonList.push(item);
@@ -24,6 +25,7 @@ let pokemonRepository = (function() {
       add: add,
       getAll: getAll
     };
+
   })();
 
 function myLoopFunction(pokemon) {

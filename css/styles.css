@@ -8,7 +8,7 @@ body {
 }
 
 p {
-  border: solid 2px #72778C;
+  border: solid 1.8px #72778C;
   border-radius: 3px;
   padding: 7px;
   font-weight: 400;
@@ -31,7 +31,7 @@ p:hover {
 nav > h1 {
   display: block;
   font-family: 'Rowdies';
-  font-size: 33px;
+  font-size: 36px;
   background-color: inherit;
   color: #42FFBB;
   width: 450px;
@@ -39,7 +39,6 @@ nav > h1 {
   padding-left: 15px;
   padding-right: 15px;
   letter-spacing: 1px;
-  border-radius: 3px;
 }
 
 nav > img:hover {
@@ -61,10 +60,11 @@ nav > img {
   border-radius: 2px;
   transition: 1.8s;
   box-shadow: 1px 2px 5px 1px grey;
+  border: solid 0.2px grey;
 }
 
 .PokemonList:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
   box-shadow: 2px 4px 10px 2px grey;
   transition: 1s;
 }
