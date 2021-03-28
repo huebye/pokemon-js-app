@@ -3,35 +3,49 @@
 body {
   font-family: 'Ropa Sans';
   font-size: 19px;
-  background-color: #99A0B9;
+  background-color: #828AAB;
   color: #414141;
 }
 
-p {
-  border: solid 1.8px #72778C;
-  border-radius: 3px;
+button {
+  text-align: center;
+  color: black;
+  border: solid 2px black;
+  border-radius: 2px;
+  letter-spacing: 0.3px;
   padding: 7px;
-  font-weight: 400;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  padding-left: 10px;
+  width: 180px;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 8px;
   transition: 1.8s;
-  background-color: #B6C1EA;
+  background-color: #5275F4;
   box-shadow: 0.2px 0.5px 1.5px  grey;
 }
 
-p:hover {
-  transform: scale(1.02);
+button:active {
+  border: solid 2px black;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+button:hover {
+  transform: scale(1.04);
   transition: 1s;
-  box-shadow: 1.5px 2px 6px  #42FFBB;
+  box-shadow: 3px 4px 8px  #42FFBB;
 }
 
 nav > h1 {
   display: block;
   font-family: 'Rowdies';
   font-size: 36px;
+  text-shadow:  2px  1px 1px black,
+                  1px -1px 1px black,
+                 -1px  1px 1px black,
+                 -1px -1px 1px black;
   background-color: inherit;
   color: #42FFBB;
   width: 450px;
@@ -53,19 +67,18 @@ nav > img {
 .PokemonList {
   display: block;
   background-color: #C2CAE8;
-  width: 450px;
+  width: 260px;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 15px;
-  border-radius: 2px;
+  padding: 30px;
+  border-radius: 3px;
   transition: 1.8s;
-  box-shadow: 1px 2px 5px 1px grey;
-  border: solid 0.2px grey;
+  box-shadow: 2px 4px 10px 2px #828AAB;
 }
 
 .PokemonList:hover {
-  transform: scale(1.03);
-  box-shadow: 2px 4px 10px 2px grey;
+  transform: scale(1.02);
+  box-shadow: 2px 4px 10px 4px #828AAB;
   transition: 1s;
 }
 
