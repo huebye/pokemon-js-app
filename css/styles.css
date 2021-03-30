@@ -7,6 +7,7 @@ body {
   color: #414141;
 }
 
+
 button {
   text-align: center;
   color: black;
@@ -34,7 +35,7 @@ ul {
 
 button:hover {
   transform: scale(1.04);
-  transition: 1s;
+  transition: 0.5s;
   box-shadow: 3px 4px 8px  #42FFBB;
 }
 
@@ -62,6 +63,46 @@ nav > img:hover {
 
 nav > img {
   transition: 1s;
+}
+
+.searchitem {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #C2CAE8;
+  width: 260px;
+  padding: 30px;
+  border-radius: 3px;
+  transition: 1.8s;
+  box-shadow: 2px 4px 10px 2px #828AAB;
+}
+
+.searchitem:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 4px 10px 4px #828AAB;
+  transition: 1s;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.search-block {
+  position: relative;
+  right: 30px;
+}
+
+input {
+  border: 2px solid black;
+  border-radius: 2px;
+  text-align: center;
+  height: 20px;
+}
+
+.addPokemon > button {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .PokemonList {
