@@ -22,7 +22,7 @@ button {
   margin: 8px;
   transition: 1.8s;
   background-color: #B3BFEC;
-  box-shadow: 0.2px 0.5px 1.5px  grey;
+  box-shadow: 0.5px 1px 2px  #72778C;
 }
 
 button:active {
