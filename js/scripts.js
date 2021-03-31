@@ -34,11 +34,25 @@ let pokemonRepository = (function() {
       })
     }
 
-
-
     function showDetails(pokemon){
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+      modal.innerText = ("Height: " + pokemon.height +"\n" + "Type: " + pokemon.type);
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+
       console.log(pokemon.name);
     }
+
+    function addModal(){
+
+
+    }
+
     return {
       add: add,
       getAll: getAll,
