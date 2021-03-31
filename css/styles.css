@@ -110,6 +110,7 @@ input {
 
 .modal {
   display: none;
+  position: relative;
   z-index: 2;
   border-radius: 2px;
   margin: 0 auto;
@@ -117,11 +118,12 @@ input {
   background-color: #80FFD1;
   width: 500px;
   height: 300px;
-  position: relative;
-  bottom: 400px;
-  opacity: 0.9;
+  bottom: 420px;
+  opacity: 0.95;
   padding: 20px;
+  animation: modalslide 0.8s ease;
 }
+
 
 .PokemonList {
   display: block;
@@ -145,4 +147,16 @@ nav {
   display: inline-block;
   background-color: inherit;
   text-align: center;
+}
+
+@keyframes modalslide {
+  0% {
+    transform: translateY(250px);
+    opacity: 0.1;
+
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 0.95;
+  }
 }
