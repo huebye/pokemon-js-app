@@ -13,28 +13,6 @@ let pokemonRepository = (function() {
       return pokemonList.forEach(myLoopFunction);
     }
 
-    //function searchNames() {
-    //  const searchfield = document.getElementById("searchfield");
-    //  let pokemonList = [
-    //                   {name: "Charizard", height: 1.7, type: ["fire", "flying"], attack: 84, defense: 78},
-    //                   {name: "Pikachu", height: 0.4, type: ["electric", "fairy"], attack: 55, defense: 40},
-    //                   {name: "Ninetales", height: 1.1, type: ["fire", "field"], attack: 76, defense: 75},
-    //                   {name: "Wobbuffet", height: 1.3, type: ["psychic", "telepathy"], attack: 33, defense: 58},
-    //                   {name: "Blastoise", height: 1.6, type: ["water", "monster"], attack: 83, defense: 100},
-    //                   {name: "Clefable", height: 1.3, type: ["fairy", "poison"], attack: 70, defense: 73},
-    //                   {name: "Nidoking", height: 1.4, type: ["ground", "poison"], attack: 102, defense: 77},
-    //                   {name: "Ursaring", height: 1.8, type: ["normal", "field"], attack: 130, defense: 75},
-    //                   {name: "Genesect", height: 1.5, type: ["steel", "bug"], attack: 120, defense: 95}
-    //                   ];
-    //  searchfield.addEventListener("keyup",(e) => {
-    //    const searchstring = e.target.value;
-    //    const filteredNames  = pokemonList.filter(pokemon => {
-    //          return pokemon.name.includes(searchstring);
-    //    });
-    //    console.log(filteredNames);
-    //  });
-    //}
-
     function addListItem(pokemon){
       let repository = document.querySelector(".PokemonList");
       let listItem = document.createElement("li");
@@ -72,6 +50,7 @@ let pokemonRepository = (function() {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      item.names = details.forms.name;
     }).catch(function (e) {
       console.error(e);
     });
@@ -79,15 +58,17 @@ let pokemonRepository = (function() {
 
 
     function showDetails(pokemon){
-      let modal = document.getElementById("myModal");
-      modal.style.display = "block";
-      modal.innerText = ("Height: " + pokemon.height +"\n" + "Type: " + pokemon.type);
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+      loadDetails(pokemon).then(function () {
+        let modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        modal.innerText = (pokemon.name +"\n" + "Height: " + pokemon.height);
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
         }
-      }
-      
+    console.log(pokemon);
+  });
       console.log(pokemon.name);
     }
 
@@ -99,8 +80,8 @@ let pokemonRepository = (function() {
       getAll: getAll,
       addListItem: addListItem,
       loadList: loadList,
-      loadDetails: loadDetails
-      //searchNames: searchNames,
+      loadDetails: loadDetails,
+      showDetails: showDetails
     };
 
   })();
@@ -112,4 +93,3 @@ function myLoopFunction(pokemon) {
 pokemonRepository.loadList().then(function(){
   pokemonRepository.getAll();
 });
-//pokemonRepository.searchNames();

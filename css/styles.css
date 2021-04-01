@@ -120,7 +120,7 @@ input {
 
 .modal {
   display: none;
-  position: relative;
+  position: sticky;
   z-index: 1;
   border-radius: 2px;
   margin: 0 auto;
@@ -128,7 +128,8 @@ input {
   background-color: #80FFD1;
   width: 500px;
   height: 300px;
-  bottom: 420px;
+  bottom: 320px;
+  left: 140px;
   opacity: 0.95;
   padding: 20px;
   animation: modalslide 0.8s ease;
