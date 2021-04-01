@@ -1,6 +1,7 @@
 
 
 body {
+  margin: 10px;
   font-family: 'Ropa Sans';
   font-size: 19px;
   background-color: #B6C1EA;
@@ -38,6 +39,7 @@ button:hover {
   transform: scale(1.04);
   transition: 0.5s;
   box-shadow: 3px 4px 8px  #42FFBB;
+  letter-spacing: 0.5px;
 }
 
 
@@ -61,6 +63,12 @@ nav > h1 {
   padding-left: 15px;
   padding-right: 15px;
   letter-spacing: 3px;
+  transition: 0.8s;
+}
+
+nav > h1:hover {
+  letter-spacing: 5px;
+  transition: 1s;
 }
 
 nav > img:hover {
@@ -77,6 +85,7 @@ nav > img {
 }
 
 .searchitem {
+  margin: 0 auto;
   text-align: center;
   background-color: #80FFD1;
   width: auto;
@@ -111,7 +120,7 @@ input {
 .modal {
   display: none;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   border-radius: 2px;
   margin: 0 auto;
   text-align: center;
@@ -135,11 +144,6 @@ input {
   transition: 1.8s;
 }
 
-.PokemonList:hover {
-  transform: scale(1.02);
-  transition: 1s;
-}
-
 nav {
   display: flex;
   width: 100%;
@@ -149,14 +153,15 @@ nav {
   text-align: center;
 }
 
+
 @keyframes modalslide {
   0% {
-    transform: translateY(250px);
+    transform: translateZ(250px);
     opacity: 0.1;
 
   }
   100%{
-    transform: translateY(0);
+    transform: translateZ(0);
     opacity: 0.95;
   }
 }
