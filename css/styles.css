@@ -35,6 +35,10 @@ ul {
   text-align: center;
 }
 
+li {
+  display: inline-flex;
+}
+
 button:hover {
   transform: scale(1.04);
   transition: 0.5s;
