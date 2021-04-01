@@ -78,9 +78,10 @@ nav > img:hover {
 
 nav > img {
   display: inline-block;
+  z-index: 1;
   position: relative;
-  left: 130px;
-  top: 10px;
+  left: 390px;
+  top: 92px;
   transition: 1s;
 }
 
@@ -100,7 +101,7 @@ nav > img {
 
 .search-block {
   position: relative;
-  right: 30px;
+  right: 35px;
 }
 
 label {

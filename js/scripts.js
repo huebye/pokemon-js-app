@@ -1,19 +1,10 @@
 let pokemonRepository = (function() {
-   let pokemonList = [
-                    {name: "Charizard", height: 1.7, type: ["fire", "flying"], attack: 84, defense: 78},
-                    {name: "Pikachu", height: 0.4, type: ["electric", "fairy"], attack: 55, defense: 40},
-                    {name: "Ninetales", height: 1.1, type: ["fire", "field"], attack: 76, defense: 75},
-                    {name: "Wobbuffet", height: 1.3, type: ["psychic", "telepathy"], attack: 33, defense: 58},
-                    {name: "Blastoise", height: 1.6, type: ["water", "monster"], attack: 83, defense: 100},
-                    {name: "Clefable", height: 1.3, type: ["fairy", "poison"], attack: 70, defense: 73},
-                    {name: "Nidoking", height: 1.4, type: ["ground", "poison"], attack: 102, defense: 77},
-                    {name: "Ursaring", height: 1.8, type: ["normal", "field"], attack: 130, defense: 75},
-                    {name: "Genesect", height: 1.5, type: ["steel", "bug"], attack: 120, defense: 95}
-                    ];
+   let pokemonList = [];
+   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
     function add(item) {
-      if (typeof item === 'object' && item === Object.keys(pokemonList)){
+      if (typeof item === 'object'){
       pokemonList.push(item);
      }
     }
@@ -56,6 +47,37 @@ let pokemonRepository = (function() {
       })
     }
 
+    function loadList() {
+      return fetch(apiUrl).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url
+          };
+          add(pokemon);
+        });
+      }).catch(function (e) {
+        console.error(e);
+      })
+    }
+
+    function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
+
     function showDetails(pokemon){
       let modal = document.getElementById("myModal");
       modal.style.display = "block";
@@ -65,6 +87,7 @@ let pokemonRepository = (function() {
           modal.style.display = "none";
         }
       }
+      
       console.log(pokemon.name);
     }
 
@@ -75,6 +98,8 @@ let pokemonRepository = (function() {
       add: add,
       getAll: getAll,
       addListItem: addListItem,
+      loadList: loadList,
+      loadDetails: loadDetails
       //searchNames: searchNames,
     };
 
@@ -84,5 +109,7 @@ function myLoopFunction(pokemon) {
   pokemonRepository.addListItem(pokemon);
 }
 
-pokemonRepository.getAll();
+pokemonRepository.loadList().then(function(){
+  pokemonRepository.getAll();
+});
 //pokemonRepository.searchNames();
