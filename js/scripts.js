@@ -132,5 +132,3 @@ pokemonRepository.loadList().then(function(){
 });
 
 pokemonRepository.searchNames();
-
-// Filter Pokemons by Name

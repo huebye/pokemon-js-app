@@ -9,6 +9,10 @@ body {
   width: auto;
 }
 
+.body-blur {
+  filter: blur(2px);
+}
+
 
 button {
   text-align: center;
@@ -30,6 +34,10 @@ button:active {
   border: solid 2px black;
 }
 
+.gridcontainer{
+  max-width: 1000px;
+  margin: 0 auto;
+}
 ul {
   list-style: none;
   text-align: center;
@@ -37,6 +45,8 @@ ul {
 
 li {
   display: inline-flex;
+  margin-left: 20px;
+  margin-bottom: 6px;
 }
 
 button:hover {
@@ -134,9 +144,59 @@ input {
   height: 300px;
   bottom: 320px;
   left: 140px;
-  opacity: 0.95;
+  opacity: 0.98;
   padding: 20px;
-  animation: modalslide 0.8s ease;
+  animation: modalslide 1.3s ease;
+}
+
+.modal > h2 {
+  display: block;
+  position: relative;
+  bottom: 25px;
+}
+
+.modal > p {
+  display: block;
+  position: relative;
+  bottom: 35px;
+}
+
+
+.modal-close {
+  display: block;
+  background-color: white;
+  opacity: 0.8;
+  width: auto;
+  height: auto;
+  position: relative;
+  bottom: 120px;
+  left: 460px;
+  border-radius: 1000px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.pokemon-img {
+  position: relative;
+  bottom: 65px;
+  border: solid 3px black;
+  border-radius: 2px;
+  background: linear-gradient(19deg, #5E6CA0, white, #B6C1EA, #B6C1EA);
+  width: 200px;
+  height: auto;
+  transition: 1.5s;
+  animation: pokemon-glitter 4s ease;
+  animation-delay: 2s;
+  background-size: 400% 400%;
+  filter: brightness(1px);
+  filter: contrast(110%);
+
+}
+
+.pokemon-img:hover {
+  transform: scale(1.03);
+  transition: 1.5s;
+  box-shadow: inset 0 0 10px #42FFBB;
 }
 
 
@@ -168,6 +228,24 @@ nav {
   }
   100%{
     transform: translateZ(0);
-    opacity: 0.95;
+    opacity: 0.98;
   }
+}
+
+/*@keyframes pokemon-glitter {
+  0% {
+    background: linear-gradient(19deg, #B6C1EA, #42FFBB, #B6C1EA);
+  }
+  50% {
+    background: linear-gradient(19deg, #B6C1EA, #42FFBB, #42FFBB);
+  }
+  100% {
+    background: linear-gradient(19deg, #42FFBB, #42FFBB, #B6C1EA);
+  }
+}*/
+
+@keyframes pokemon-glitter {
+    0%{background-position:28% 0%}
+    50%{background-position:73% 100%}
+    100%{background-position:28% 0%}
 }
