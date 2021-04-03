@@ -129,7 +129,8 @@ input {
   text-align: center;
   font-family: inherit;
   font-size: 15px;
-  height: 20px;
+  height: 23px;
+  width: auto;
 }
 
 .modal {
@@ -141,8 +142,8 @@ input {
   text-align: center;
   background-color: #80FFD1;
   width: 500px;
-  height: 300px;
-  bottom: 320px;
+  height: 350px;
+  bottom: 220px;
   left: 140px;
   opacity: 0.98;
   padding: 20px;
@@ -178,12 +179,13 @@ input {
 
 .pokemon-img {
   position: relative;
-  bottom: 65px;
+  bottom: 55px;
   border: solid 3px black;
   border-radius: 2px;
+  padding: 10px;
   background: linear-gradient(19deg, #5E6CA0, white, #B6C1EA, #B6C1EA);
   width: 200px;
-  height: auto;
+  height: 200px;;
   transition: 1.5s;
   animation: pokemon-glitter 3.5s ease;
   animation-delay: 1s;
