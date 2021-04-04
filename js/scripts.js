@@ -10,6 +10,20 @@ let pokemonRepository = (function() {
      }
     }
 
+    function edit(){
+      let btn = document.forms['searchNames'].querySelector('button');
+      btn.addEventListener('click', function(e){
+         editForm();
+      });
+      
+    }
+
+    function editForm(){
+      let modal = document.getElementById("addModal");
+      modal.style.display = "block";
+
+    }
+
     function getAll() {
       return pokemonList.forEach(myLoopFunction);
     }
@@ -42,6 +56,8 @@ let pokemonRepository = (function() {
       })
     }
 
+    // Load details from API
+
     function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
@@ -56,6 +72,8 @@ let pokemonRepository = (function() {
       console.error(e);
     });
   }
+
+  // Call modal and show details
 
     function showDetails(pokemon){
       loadDetails(pokemon).then(function () {
@@ -85,11 +103,9 @@ let pokemonRepository = (function() {
           if (event.target != modal) {
             modal.style.display = "none";
           }
-        }
-    console.log(pokemon);
+        };
   });
-      console.log(pokemon.name);
-    }
+}
 
     // Filter Pokemons by Name
 
@@ -118,7 +134,9 @@ let pokemonRepository = (function() {
       loadList: loadList,
       loadDetails: loadDetails,
       showDetails: showDetails,
-      searchNames: searchNames
+      searchNames: searchNames,
+      edit: edit,
+      editForm: editForm
     };
 
   })();
@@ -132,3 +150,4 @@ pokemonRepository.loadList().then(function(){
 });
 
 pokemonRepository.searchNames();
+pokemonRepository.edit();

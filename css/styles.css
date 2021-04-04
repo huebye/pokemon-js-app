@@ -58,12 +58,14 @@ button:hover {
 
 
 header {
+  display: block;
   position: relative;
   right: 40px;
 }
 
 nav > h1 {
   display: inline-block;
+  position: static;
   font-family: 'Rowdies';
   font-size: 45px;
   text-shadow:  3px  1px 1px black,
@@ -72,7 +74,7 @@ nav > h1 {
                  -1px -1px 1px black;
   background-color: inherit;
   color: #42FFBB;
-  width: 450px;
+  width: 250px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -94,7 +96,7 @@ nav > img {
   display: inline-block;
   z-index: 1;
   position: relative;
-  left: 390px;
+  left: 290px;
   top: 92px;
   transition: 1s;
 }
@@ -219,6 +221,51 @@ nav {
   display: inline-block;
   background-color: inherit;
   text-align: center;
+}
+
+form {
+  display: block;
+}
+
+#add-button {
+  display: none;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: #80FFD1;
+  font-family: 'Rowdies';
+  color: #B6C1EA;
+  text-shadow:  1px  1px 1px black,
+                  1px -1px 1px black,
+                 -1px  1px 1px black,
+                 -1px -1px 1px black;
+  position: relative;
+  bottom: 112px;
+  right: 200px;
+  width: 150px;
+  height: auto;
+  border: none;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 4px;
+  box-shadow: none;
+}
+
+.addPokemon {
+  display: block;
+  height: 0;
+}
+
+.addPokemonModal {
+  display: none;
+  position: sticky;
+  margin: 0 auto;
+  z-index: 1;
+  border-radius: 3px;
+  position: relative;
+  top: 200px;
+  text-align: center;
+  padding: 10px;
+  background-color: #80FFD1;
+  width: 300px;
 }
 
 
