@@ -11,16 +11,33 @@ let pokemonRepository = (function() {
     }
 
     function edit(){
-      let btn = document.forms['searchNames'].querySelector('button');
-      btn.addEventListener('click', function(e){
+      let btn = document.forms['searchNames'].querySelector('a');
+      btn.addEventListener('click', function(event){
          editForm();
       });
-      
+
     }
 
     function editForm(){
-      let modal = document.getElementById("addModal");
-      modal.style.display = "block";
+      let modalAdd = document.getElementById("addModal");
+      let inputName = document.getElementById('addName');
+      let btnAdd = document.getElementById('addPokemon-button');
+      let list = document.getElementById('ul-search');
+      modalAdd.style.display = "block";
+      let addPokemonName = function() {
+        let text = inputName.value;
+        let liBtn = document.createElement('button');
+        liBtn.innerText = text.toUpperCase();
+        list.appendChild(liBtn);
+      };
+      btnAdd.onclick = addPokemonName;
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape'){
+          modalAdd.style.display = "none";
+        }
+      });
+
+
 
     }
 

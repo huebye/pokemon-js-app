@@ -228,10 +228,11 @@ form {
 }
 
 #add-button {
-  display: none;
+  display: block;
   margin: 0 auto;
+  background-color: inherit;
+  font-size: 15px;
   z-index: 1;
-  background-color: #80FFD1;
   font-family: 'Rowdies';
   color: #B6C1EA;
   text-shadow:  1px  1px 1px black,
@@ -239,14 +240,25 @@ form {
                  -1px  1px 1px black,
                  -1px -1px 1px black;
   position: relative;
-  bottom: 112px;
-  right: 200px;
+  bottom: 55px;
+  left: 240px;
   width: 150px;
   height: auto;
   border: none;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 4px;
   box-shadow: none;
+}
+#add-button:active {
+  color: white;
+  transform: scale(1.02);
+}
+
+#confirm-button {
+  background-color: #0BFFA7;
+}
+
+#addPokemon-button {
+  background-color: #B3BFEC;
+  width: auto;
 }
 
 .addPokemon {
@@ -260,12 +272,23 @@ form {
   margin: 0 auto;
   z-index: 1;
   border-radius: 3px;
-  position: relative;
   top: 200px;
   text-align: center;
-  padding: 10px;
+  padding: 25px;
   background-color: #80FFD1;
   width: 300px;
+}
+
+.addPokemonModal > input {
+  display: inline-block;
+  margin: 2px;
+  width: 100px;
+}
+
+.addPokemonModal > label {
+  display: inline-block;
+  width: 60px;
+  text-align: left;
 }
 
 
