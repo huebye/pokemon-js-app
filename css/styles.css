@@ -36,10 +36,16 @@ button {
 
 .btn {
   border: solid 2px black;
+  transition: 1s;
+}
+
+.btn:hover {
+  color: #202020;
 }
 
 .gridcontainer{
   max-width: 1000px;
+  margin-top: 60px;
   margin: 0 auto;
 }
 ul {
@@ -133,7 +139,7 @@ input {
   text-align: center;
   font-family: inherit;
   font-size: 15px;
-  height: 23px;
+  height: 27px;
   width: auto;
 }
 
@@ -179,7 +185,7 @@ input {
   background-color: #B6C1EA;
   width: auto;
   margin: 0 auto;
-  margin-top: 65px;
+  margin-top: 125px;
   padding: 30px;
   border-radius: 3px;
   transition: 1.8s;
@@ -191,6 +197,7 @@ form {
 
 .modal-body {
   background-color: white;
+  font-size: 22px;
   background: opacity(0.8);
 }
 
