@@ -30,6 +30,10 @@ button {
   box-shadow: 0.5px 1px 2px  #72778C;
 }
 
+btn {
+  border: solid 2px black;
+}
+
 button:active {
   border: solid 2px black;
 }
@@ -145,7 +149,7 @@ input {
   background-color: #80FFD1;
   width: 500px;
   height: 350px;
-  bottom: 220px;
+  bottom: 400px;
   left: 140px;
   opacity: 0.98;
   padding: 20px;
@@ -159,7 +163,8 @@ input {
 }
 
 .modal > p {
-  display: block;
+  display: inline-block;
+  text-align: center;
   position: relative;
   bottom: 35px;
 }
@@ -181,7 +186,7 @@ input {
 
 .pokemon-img {
   position: relative;
-  bottom: 55px;
+  bottom: 65px;
   border: solid 3px black;
   border-radius: 2px;
   padding: 10px;
@@ -230,8 +235,9 @@ form {
 #add-button {
   display: block;
   margin: 0 auto;
+  cursor: pointer;
   background-color: inherit;
-  font-size: 15px;
+  font-size: 17px;
   z-index: 1;
   font-family: 'Rowdies';
   color: #B6C1EA;
@@ -240,25 +246,31 @@ form {
                  -1px  1px 1px black,
                  -1px -1px 1px black;
   position: relative;
-  bottom: 55px;
+  bottom: 50px;
   left: 240px;
   width: 150px;
   height: auto;
   border: none;
   box-shadow: none;
-}
-#add-button:active {
-  color: white;
-  transform: scale(1.02);
+  transition: 1s;
 }
 
-#confirm-button {
-  background-color: #0BFFA7;
+#add-button:active {
+  color: white;
+  transform: scale(1.07);
 }
+
+#add-button:hover {
+  transform: scale(1.07);
+  transition: 1s;
+}
+
 
 #addPokemon-button {
   background-color: #B3BFEC;
+  cursor: pointer;
   width: auto;
+  line-height: 12px;
 }
 
 .addPokemon {
@@ -287,7 +299,7 @@ form {
 
 .addPokemonModal > label {
   display: inline-block;
-  width: 60px;
+  width: 40px;
   text-align: left;
 }
 

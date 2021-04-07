@@ -20,15 +20,20 @@ let pokemonRepository = (function() {
 
     function editForm(){
       let modalAdd = document.getElementById("addModal");
+      let modal = document.getElementById("myModal");
       let inputName = document.getElementById('addName');
+      let inputHeight = document.getElementById('addType');
       let btnAdd = document.getElementById('addPokemon-button');
-      let list = document.getElementById('ul-search');
+      let list = document.querySelector(".PokemonList");
       modalAdd.style.display = "block";
       let addPokemonName = function() {
         let text = inputName.value;
         let liBtn = document.createElement('button');
+        let h2 = document.createElement('h2');
+        h2.innerText = inputName.value.toUpperCase();
         liBtn.innerText = text.toUpperCase();
         list.appendChild(liBtn);
+        modal.appendChild(h2);
       };
       btnAdd.onclick = addPokemonName;
       window.addEventListener('keydown', (e) => {
@@ -50,6 +55,9 @@ let pokemonRepository = (function() {
       let listItem = document.createElement("li");
       let button = document.createElement("button");
       button.innerText = pokemon.name.toUpperCase();
+      button.classList.add("btn");
+      button.classList.add("btn-outline-dark");
+      listItem.classList.add("group-list-item")
       listItem.appendChild(button);
       repository.appendChild(listItem);
       button.addEventListener('click', function(event){
@@ -83,8 +91,9 @@ let pokemonRepository = (function() {
       // Now we add the details to the item
       item.imageUrl = details.sprites.other.dream_world.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.type1 = details.types[0].type.name;
       item.names = details.forms.name;
+      item.weight = details.weight;
     }).catch(function (e) {
       console.error(e);
     });
@@ -98,9 +107,15 @@ let pokemonRepository = (function() {
         let closeModalButton = document.createElement("button");
         let myImage = document.createElement("img");
         let title = document.createElement("h2");
-        let content = document.createElement("p");
+        let content1 = document.createElement("p");
+        let content2 = document.createElement("p");
+        let content3 = document.createElement("p");
         title.innerText = pokemon.name.toUpperCase();
-        content.innerText = ("Height: " + pokemon.height);
+        content1.innerText = ("Height: " + pokemon.height);
+        content2.innerText = ("Weight: " + pokemon.weight);
+        content3.innerText = ("Type: " + pokemon.type1);
+        content1.style.paddingRight = "15px";
+        content2.style.paddingRight = "15px";
         myImage.src = pokemon.imageUrl;
         myImage.classList.add("pokemon-img");
         closeModalButton.classList.add("modal-close");
@@ -108,7 +123,9 @@ let pokemonRepository = (function() {
         modal.style.display = "block";
         modal.innerText = '';
         modal.appendChild(title);
-        modal.appendChild(content);
+        modal.appendChild(content1);
+        modal.appendChild(content2);
+        modal.appendChild(content3);
         modal.appendChild(closeModalButton);
         modal.appendChild(myImage);
         window.addEventListener('keydown', (e) => {
