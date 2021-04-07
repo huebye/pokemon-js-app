@@ -10,41 +10,6 @@ let pokemonRepository = (function() {
      }
     }
 
-    function edit(){
-      let btn = document.forms['searchNames'].querySelector('a');
-      btn.addEventListener('click', function(event){
-         editForm();
-      });
-
-    }
-
-    function editForm(){
-      let modalAdd = document.getElementById("addModal");
-      let modal = document.getElementById("myModal");
-      let inputName = document.getElementById('addName');
-      let inputHeight = document.getElementById('addType');
-      let btnAdd = document.getElementById('addPokemon-button');
-      let list = document.querySelector(".PokemonList");
-      modalAdd.style.display = "block";
-      let addPokemonName = function() {
-        let text = inputName.value;
-        let liBtn = document.createElement('button');
-        let h2 = document.createElement('h2');
-        h2.innerText = inputName.value.toUpperCase();
-        liBtn.innerText = text.toUpperCase();
-        list.appendChild(liBtn);
-        modal.appendChild(h2);
-      };
-      btnAdd.onclick = addPokemonName;
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape'){
-          modalAdd.style.display = "none";
-        }
-      });
-
-
-
-    }
 
     function getAll() {
       return pokemonList.forEach(myLoopFunction);
@@ -57,7 +22,9 @@ let pokemonRepository = (function() {
       button.innerText = pokemon.name.toUpperCase();
       button.classList.add("btn");
       button.classList.add("btn-outline-dark");
-      listItem.classList.add("group-list-item")
+      button.setAttribute("data-target","#myModal");
+      button.setAttribute("data-toggle","modal");
+      listItem.classList.add("group-list-item");
       listItem.appendChild(button);
       repository.appendChild(listItem);
       button.addEventListener('click', function(event){
@@ -103,8 +70,9 @@ let pokemonRepository = (function() {
 
     function showDetails(pokemon){
       loadDetails(pokemon).then(function () {
-        let modal = document.getElementById("myModal");
-        let closeModalButton = document.createElement("button");
+        let modalBody = document.querySelector(".modal-body");
+        let modalTitle = document.querySelector(".modal-title");
+        let modalImg = document.createElement("div");
         let myImage = document.createElement("img");
         let title = document.createElement("h2");
         let content1 = document.createElement("p");
@@ -117,27 +85,17 @@ let pokemonRepository = (function() {
         content1.style.paddingRight = "15px";
         content2.style.paddingRight = "15px";
         myImage.src = pokemon.imageUrl;
-        myImage.classList.add("pokemon-img");
-        closeModalButton.classList.add("modal-close");
-        closeModalButton.innerText = "X";
-        modal.style.display = "block";
-        modal.innerText = '';
-        modal.appendChild(title);
-        modal.appendChild(content1);
-        modal.appendChild(content2);
-        modal.appendChild(content3);
-        modal.appendChild(closeModalButton);
-        modal.appendChild(myImage);
-        window.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape'){
-            modal.style.display = "none";
-          }
-        });
-        window.onclick = function(event) {
-          if (event.target != modal) {
-            modal.style.display = "none";
-          }
-        };
+        myImage.classList.add("imgPokemon");
+        modalImg.classList.add("imgDiv");
+        modalBody.innerText = '';
+        modalTitle.innerText = '';
+        modalImg.innerText = '';
+        modalTitle.appendChild(title);
+        modalBody.appendChild(content1);
+        modalBody.appendChild(content2);
+        modalBody.appendChild(content3);
+        modalBody.appendChild(modalImg);
+        modalImg.appendChild(myImage);
   });
 }
 
@@ -168,9 +126,7 @@ let pokemonRepository = (function() {
       loadList: loadList,
       loadDetails: loadDetails,
       showDetails: showDetails,
-      searchNames: searchNames,
-      edit: edit,
-      editForm: editForm
+      searchNames: searchNames
     };
 
   })();
@@ -184,4 +140,3 @@ pokemonRepository.loadList().then(function(){
 });
 
 pokemonRepository.searchNames();
-pokemonRepository.edit();

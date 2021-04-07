@@ -13,6 +13,10 @@ body {
   filter: blur(2px);
 }
 
+button > span {
+  font-size: 40px;
+  color: black;
+}
 
 button {
   text-align: center;
@@ -30,11 +34,7 @@ button {
   box-shadow: 0.5px 1px 2px  #72778C;
 }
 
-btn {
-  border: solid 2px black;
-}
-
-button:active {
+.btn {
   border: solid 2px black;
 }
 
@@ -63,11 +63,14 @@ button:hover {
 
 header {
   display: block;
-  position: relative;
-  right: 40px;
 }
 
-nav > h1 {
+.navbar {
+  background-color: #B6C1EA;
+  font-family: 'Rowdies';
+}
+
+nav > a> h1 {
   display: inline-block;
   position: static;
   font-family: 'Rowdies';
@@ -86,23 +89,18 @@ nav > h1 {
   transition: 0.8s;
 }
 
-nav > h1:hover {
+nav > a > h1:hover {
   letter-spacing: 5px;
   transition: 1s;
 }
 
-nav > img:hover {
-  transform: scale(1.1);
-  transition: 1s;
+#logoImg {
+  position: relative;
+  bottom: 6px;
 }
 
-nav > img {
-  display: inline-block;
-  z-index: 1;
-  position: relative;
-  left: 290px;
-  top: 92px;
-  transition: 1s;
+#searchNames{
+  margin-top: 65px;
 }
 
 .searchitem {
@@ -139,194 +137,82 @@ input {
   width: auto;
 }
 
-.modal {
-  display: none;
-  position: sticky;
+#close-btn {
+  background-color: inherit;
   z-index: 1;
-  border-radius: 2px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #80FFD1;
-  width: 500px;
-  height: 350px;
-  bottom: 400px;
-  left: 140px;
-  opacity: 0.98;
-  padding: 20px;
-  animation: modalslide 1.3s ease;
-}
-
-.modal > h2 {
-  display: block;
-  position: relative;
-  bottom: 25px;
-}
-
-.modal > p {
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  bottom: 35px;
-}
-
-
-.modal-close {
-  display: block;
-  background-color: white;
-  opacity: 0.8;
   width: auto;
   height: auto;
-  position: relative;
-  bottom: 120px;
-  left: 460px;
-  border-radius: 1000px;
-  font-size: 10px;
-  font-weight: bold;
+  box-shadow: none;
 }
 
-.pokemon-img {
-  position: relative;
-  bottom: 65px;
-  border: solid 3px black;
-  border-radius: 2px;
-  padding: 10px;
-  background: linear-gradient(19deg, #5E6CA0, white, #B6C1EA, #B6C1EA);
-  width: 200px;
-  height: 200px;;
-  transition: 1.5s;
-  animation: pokemon-glitter 3.5s ease;
-  animation-delay: 1s;
-  background-size: 400% 400%;
-  filter: brightness(1px);
-  filter: contrast(110%);
-
+#close-btn:hover {
+  box-shadow: none;
+  transform: none;
 }
 
-.pokemon-img:hover {
-  transform: scale(1.03);
-  transition: 1.5s;
-  box-shadow: inset 0 0 10px #42FFBB;
+.modal-title {
+  text-align: center;
 }
 
+.modal-header {
+  background-color: white;
+  font-family: 'Rowdies';
+  color: #42FFBB;
+  letter-spacing: 1px;
+  text-shadow:  2px  1px 1px black,
+                  1px -1px 1px black,
+                 -1px  1px 1px black,
+                 -1px -1px 1px black;
+}
+
+#modalBody {
+  display: block;
+}
+
+.modal-body > p {
+  display: inline-block;
+  text-align: center;
+}
 
 .PokemonList {
   display: block;
   background-color: #B6C1EA;
   width: auto;
   margin: 0 auto;
+  margin-top: 65px;
   padding: 30px;
   border-radius: 3px;
   transition: 1.8s;
-}
-
-nav {
-  display: flex;
-  width: 100%;
-  height: 80px;
-  display: inline-block;
-  background-color: inherit;
-  text-align: center;
 }
 
 form {
   display: block;
 }
 
-#add-button {
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-  background-color: inherit;
-  font-size: 17px;
-  z-index: 1;
-  font-family: 'Rowdies';
-  color: #B6C1EA;
-  text-shadow:  1px  1px 1px black,
-                  1px -1px 1px black,
-                 -1px  1px 1px black,
-                 -1px -1px 1px black;
-  position: relative;
-  bottom: 50px;
-  left: 240px;
-  width: 150px;
-  height: auto;
-  border: none;
-  box-shadow: none;
+.modal-body {
+  background-color: white;
+  background: opacity(0.8);
+}
+
+.imgPokemon {
+  max-width: 250px;
+  margin: 15px;
+  min-height: 250px;
   transition: 1s;
 }
 
-#add-button:active {
-  color: white;
-  transform: scale(1.07);
+.imgPokemon:hover {
+  transform: scale(1.03);
+  transition: 1.5s;
 }
 
-#add-button:hover {
-  transform: scale(1.07);
-  transition: 1s;
-}
-
-
-#addPokemon-button {
-  background-color: #B3BFEC;
-  cursor: pointer;
-  width: auto;
-  line-height: 12px;
-}
-
-.addPokemon {
+.imgDiv {
   display: block;
-  height: 0;
+  background: linear-gradient(19deg, #80FFD1, white, #42FFBB, #42FFBB);
+  animation: pokemon-glitter 3.5s ease;
+  animation-delay: 1s;
+  background-size: 400% 400%;
 }
-
-.addPokemonModal {
-  display: none;
-  position: sticky;
-  margin: 0 auto;
-  z-index: 1;
-  border-radius: 3px;
-  top: 200px;
-  text-align: center;
-  padding: 25px;
-  background-color: #80FFD1;
-  width: 300px;
-}
-
-.addPokemonModal > input {
-  display: inline-block;
-  margin: 2px;
-  width: 100px;
-}
-
-.addPokemonModal > label {
-  display: inline-block;
-  width: 40px;
-  text-align: left;
-}
-
-
-@keyframes modalslide {
-  0% {
-    transform: translateZ(250px);
-    opacity: 0.1;
-
-  }
-  100%{
-    transform: translateZ(0);
-    opacity: 0.98;
-  }
-}
-
-/*@keyframes pokemon-glitter {
-  0% {
-    background: linear-gradient(19deg, #B6C1EA, #42FFBB, #B6C1EA);
-  }
-  50% {
-    background: linear-gradient(19deg, #B6C1EA, #42FFBB, #42FFBB);
-  }
-  100% {
-    background: linear-gradient(19deg, #42FFBB, #42FFBB, #B6C1EA);
-  }
-}*/
 
 @keyframes pokemon-glitter {
     0%{background-position:28% 0%}
