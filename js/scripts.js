@@ -1,6 +1,6 @@
 let pokemonRepository = (function() {
    let pokemonList = [];
-   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=500';
 
 
 
@@ -20,7 +20,7 @@ let pokemonRepository = (function() {
       let listItem = document.createElement("li");
       let button = document.createElement("button");
       button.innerText = pokemon.name.toUpperCase();
-      button.style.backgroundColor = "#DADADA"
+      button.style.backgroundColor = "#DADADA";
       button.classList.add("btn");
       button.classList.add("btn-outline-dark");
       button.setAttribute("data-target","#myModal");
