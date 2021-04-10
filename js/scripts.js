@@ -137,7 +137,7 @@ let pokemonRepository = (function() {
         } else if (pokemon.type1 === 'fighting') {
             content6.style.backgroundColor = '#FF4646'
         } else if (pokemon.type1 === 'steel') {
-            content6.style.backgroundColor = '#717171'
+            content6.style.backgroundColor = '#9C9898'
         } else if (pokemon.type1 === 'ice') {
             content6.style.backgroundColor = '#60FFF5'
         } else if (pokemon.type1 === 'rock') {
@@ -181,7 +181,6 @@ let pokemonRepository = (function() {
       });
     }
 
-
     return {
       add: add,
       getAll: getAll,
@@ -189,7 +188,7 @@ let pokemonRepository = (function() {
       loadList: loadList,
       loadDetails: loadDetails,
       showDetails: showDetails,
-      searchNames: searchNames
+      searchNames: searchNames,
     };
 
   })();
