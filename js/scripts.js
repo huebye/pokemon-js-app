@@ -94,11 +94,11 @@ let pokemonRepository = (function() {
         content5.innerText = 'Type:';
         content6.innerText = pokemon.type1;
         content2.style.paddingRight = '15px';
-        content1.style.paddingRight = '6px';
+        content1.style.paddingRight = '2px';
         content4.style.paddingRight = '15px';
-        content3.style.paddingRight = '6px';
+        content3.style.paddingRight = '2px';
         content6.style.paddingRight = '15px';
-        content5.style.paddingRight = '6px';
+        content5.style.paddingRight = '2px';
         myImage.src = pokemon.imageUrl;
         myImage.classList.add('imgPokemon');
         modalImg.classList.add('imgDiv');
@@ -114,6 +114,39 @@ let pokemonRepository = (function() {
         modalBody.appendChild(content6);
         modalBody.appendChild(modalImg);
         modalImg.appendChild(myImage);
+        if(pokemon.type1 === 'fire') {
+            content6.style.backgroundColor = '#FF9F46';
+        } else if (pokemon.type1 === 'grass') {
+            content6.style.backgroundColor = '#4AC536'
+        } else if (pokemon.type1 === 'water') {
+            content6.style.backgroundColor = '#66D1FF'
+        } else if (pokemon.type1 === 'bug') {
+            content6.style.backgroundColor = '#E8CBCB'
+        } else if (pokemon.type1 === 'ground') {
+            content6.style.backgroundColor = '#938065'
+        } else if (pokemon.type1 === 'poison') {
+            content6.style.backgroundColor = '#B069C9'
+        } else if (pokemon.type1 === 'electric') {
+            content6.style.backgroundColor = '#FBFF48'
+        } else if (pokemon.type1 === 'normal') {
+            content6.style.backgroundColor = '#E1FBC0'
+        } else if (pokemon.type1 === 'fairy') {
+            content6.style.backgroundColor = '#FC65FF'
+        } else if (pokemon.type1 === 'psychic') {
+            content6.style.backgroundColor = '#A0A4FF'
+        } else if (pokemon.type1 === 'fighting') {
+            content6.style.backgroundColor = '#FF4646'
+        } else if (pokemon.type1 === 'steel') {
+            content6.style.backgroundColor = '#717171'
+        } else if (pokemon.type1 === 'ice') {
+            content6.style.backgroundColor = '#60FFF5'
+        } else if (pokemon.type1 === 'rock') {
+            content6.style.backgroundColor = '#6F533A'
+        } else if (pokemon.type1 === 'dragon') {
+            content6.style.backgroundColor = '#FFD646'
+        } else if (pokemon.type1 === 'dark') {
+            content6.style.backgroundColor = '#727756'
+        }
         removeLoader();
   });
 }
