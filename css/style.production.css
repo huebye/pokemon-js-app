@@ -1,14 +1,20 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
   margin: 10px;
   font-family: 'Ropa Sans';
   font-size: 19px;
-  background-color: #B6C1EA;
+  background-color: #b6c1ea;
   color: #414141;
   width: auto;
 }
 
 button > span {
-  background-color: inherit;
   font-size: 40px;
   color: black;
 }
@@ -24,13 +30,18 @@ button {
   font-weight: 500;
   font-size: 16px;
   margin: 8px;
+  -webkit-transition: 1.8s;
+  -o-transition: 1.8s;
   transition: 1.8s;
-  background-color: #B3BFEC;
-  box-shadow: 0.5px 1px 2px  #72778C;
+  background-color: #b3bfec;
+  -webkit-box-shadow: 0.5px 1px 2px  #72778c;
+  box-shadow: 0.5px 1px 2px  #72778c;
 }
 
 .btn {
   border: solid 2px black;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -50,15 +61,22 @@ ul {
 }
 
 li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-left: 20px;
   margin-bottom: 6px;
 }
 
 button:hover {
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
   transform: scale(1.04);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
-  box-shadow: 3px 4px 8px  #42FFBB;
+  -webkit-box-shadow: 3px 4px 8px  #42ffbb;
+  box-shadow: 3px 4px 8px  #42ffbb;
   letter-spacing: 0.5px;
 }
 
@@ -68,31 +86,36 @@ header {
 }
 
 .navbar {
-  background-color: #B6C1EA;
+  background-color: #b6c1ea;
   font-family: 'Rowdies';
 }
 
-nav > a> h1 {
+nav > a > h1 {
   display: inline-block;
   position: static;
   font-family: 'Rowdies';
   font-size: 45px;
-  text-shadow: 3px  1px 1px black,
-                  1px -1px 1px black,
-                 -1px  1px 1px black,
-                 -1px -1px 1px black;
+  text-shadow:
+    3px  1px 1px black,
+    1px -1px 1px black,
+    -1px  1px 1px black,
+    -1px -1px 1px black;
   background-color: inherit;
-  color: #42FFBB;
+  color: #42ffbb;
   width: 250px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
   letter-spacing: 3px;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
   transition: 0.8s;
 }
 
 nav > a > h1:hover {
   letter-spacing: 5px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -108,14 +131,20 @@ nav > a > h1:hover {
 .searchitem {
   margin: 0 auto;
   text-align: center;
-  background-color: #80FFD1;
+  background-color: #80ffd1;
   width: auto;
   padding: 25px;
+  -webkit-transition: 1.8s;
+  -o-transition: 1.8s;
   transition: 1.8s;
 }
 
 .searchitem:hover {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
   transform: scale(1.02);
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -144,11 +173,15 @@ input {
   z-index: 1;
   width: auto;
   height: auto;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 #close-btn:hover {
+  -webkit-box-shadow: none;
   box-shadow: none;
+  -webkit-transform: none;
+  -ms-transform: none;
   transform: none;
 }
 
@@ -159,12 +192,13 @@ input {
 .modal-header {
   background-color: white;
   font-family: 'Rowdies';
-  color: #42FFBB;
+  color: #42ffbb;
   letter-spacing: 1px;
-  text-shadow:  2px  1px 1px black,
-                  1px -1px 1px black,
-                 -1px  1px 1px black,
-                 -1px -1px 1px black;
+  text-shadow:
+    2px  1px 1px black,
+    1px -1px 1px black,
+    -1px  1px 1px black,
+    -1px -1px 1px black;
 }
 
 #modalBody {
@@ -178,12 +212,14 @@ input {
 
 .PokemonList {
   display: block;
-  background-color: #B6C1EA;
+  background-color: #b6c1ea;
   width: auto;
   margin: 0 auto;
   margin-top: 125px;
   padding: 30px;
   border-radius: 3px;
+  -webkit-transition: 1.8s;
+  -o-transition: 1.8s;
   transition: 1.8s;
 }
 
@@ -200,23 +236,32 @@ form {
   max-width: 250px;
   margin: 15px;
   min-height: 250px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
 .imgPokemon:hover {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
   transform: scale(1.03);
+  -webkit-transition: 1.5s;
+  -o-transition: 1.5s;
   transition: 1.5s;
 }
 
 .imgDiv {
   display: block;
-  background: linear-gradient(19deg, #80FFD1, white, #42FFBB, #42FFBB);
+  background: -o-linear-gradient(71deg, #80ffd1, white, #42ffbb, #42ffbb);
+  background: linear-gradient(19deg, #80ffd1, white, #42ffbb, #42ffbb);
+  -webkit-animation: pokemon-glitter 3.5s ease;
   animation: pokemon-glitter 3.5s ease;
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
   background-size: 400% 400%;
 }
 
-@keyframes pokemon-glitter {
+@-webkit-keyframes pokemon-glitter {
   0% {
     background-position: 28% 0%;
   }

@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="shortcut icon" href="img/logo.svg" aria-hidden="true">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&family=Rowdies:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>PokemonApp</title>
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" href="img/logo.svg" aria-hidden="true">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="dist/style.production.mini.css">
+          <title>PokemonApp</title>
+    </head>
   <body>
 <!-- Logo and Header -->
     <header>
       <nav class="navbar navbar-light fixed-top" >
-  <a class="navbar-brand" href="index.html"><h1>POKEDEX</h1></a>
-  <span><img class="navbar " id="logoImg" src="./img/logo.svg"></span>
-</nav>
+        <a class="navbar-brand" href="index.html"><h1>POKEDEX</h1></a>
+        <span><img class="navbar " id="logoImg" src="./img/logo.svg" alt="logo Image"></span>
+      </nav>
     </header>
 <!-- Search Section -->
   <form id="searchNames" class="fixed-top">
+    <div class="searchitem">
+      <div class="search-block">
+        <label for="searchfield">Search:</label>
+        <input type="text" id="searchfield" placeholder="Search">
+      </div>
     </div>
-  <div class="searchitem">
-    <div class="search-block">
-      <label for="search-field">Search:</label>
-      <input type="text" id="searchfield" placeholder="Search">
-    </div>
-  </div>
   </form>
-
+<!-- List Of Pokemon -->
 <div class="gridcontainer">
   <ul class="PokemonList list-group" id="ul-search">
   </ul>
-<!--  <div id="myModal" class="modal">
-</div>-->
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <div class="modal-title text-center">
+  <!-- Hidden Modal/Pokemon Details -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title text-center">
+          </div>
+            <button type="button" id="close-btn" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <div class="modal-body text-center" id="modalBody">
+            </div>
       </div>
-      <button type="button" id="close-btn" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body text-center" id="modalBody">
     </div>
   </div>
 </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="./js/promise-polyfill.js"></script>
-<script type="text/javascript" src="./js/fetch-polyfill.js"></script>
-<script type="text/javascript" src="./js/scripts.js"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/promise-polyfill.js"></script>
+    <script type="text/javascript" src="./js/fetch-polyfill.js"></script>
+    <script type="text/javascript" src="./dist/scripts.mini.js"></script>
+ </body>
 </html>
