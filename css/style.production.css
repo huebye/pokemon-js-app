@@ -227,6 +227,12 @@ form {
   display: block;
 }
 
+#loader {
+  visibility: hidden;
+  z-index: 10000;
+  color: #80ffd1;
+}
+
 .modal-body {
   background-color: white;
   font-size: 22px;

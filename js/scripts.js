@@ -29,6 +29,7 @@ let pokemonRepository = (function() {
       listItem.appendChild(button);
       repository.appendChild(listItem);
       button.addEventListener('click', function(){
+        showLoader();
         showDetails(pokemon);
       });
     }
@@ -97,8 +98,20 @@ let pokemonRepository = (function() {
         modalBody.appendChild(content3);
         modalBody.appendChild(modalImg);
         modalImg.appendChild(myImage);
+        removeLoader();
   });
 }
+
+    function showLoader() {
+      let loader = document.querySelector('#loader');
+      loader.style.visibility = 'visible';
+
+    }
+
+    function removeLoader() {
+      let loader = document.querySelector('#loader');
+      loader.style.visibility = 'hidden';
+    }
 
     // Filter Pokemons by Name
 
