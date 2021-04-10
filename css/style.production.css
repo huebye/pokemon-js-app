@@ -247,6 +247,21 @@ form {
   transition: 1s;
 }
 
+#heightNumber {
+  font-weight: bolder;
+  color: black;
+}
+
+#weightNumber {
+  font-weight: bolder;
+  color: black;
+}
+
+#typeText {
+  font-weight: bolder;
+  color: black;
+}
+
 .imgPokemon:hover {
   -webkit-transform: scale(1.03);
   -ms-transform: scale(1.03);
